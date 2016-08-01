@@ -1,0 +1,3 @@
+- UnicodeEncodeError: 'ascii' codec can't encode character u'\xf3' in position 1646: ordinal not in range(128)
+
+do not use any special character even in comments
