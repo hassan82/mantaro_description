@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="mantaroboti 2">
+<robot name="mantarobot">
 	
   <link name="base_footprint"/>
   
@@ -12,40 +12,41 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://mantaro_description/meshes/base_link.stl"/>
+        <mesh filename="package://mantaro_description/meshes/base.stl"/>
       </geometry>
-      <origin rpy="0 0 1.57" xyz="0 0 0.085"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
   </link>
 
   <joint name="base_to_pole" type="fixed">
     <parent link="base_link"/>
     <child link="pole_link"/>
-    <origin xyz="0 0 .255"/>
+    <origin xyz="0 0 0.255"/>
   </joint>
 
   <link name="pole_link">
     <visual>
       <geometry>
 	    <mesh filename="package://mantaro_description/meshes/pole.stl"/>
-	   <!-- <cylinder length="1.01" radius="0.0125"/> -->
 	   </geometry>
-	  <origin rpy="0 0 0" xyz="0 0 -.255"/>
+	  <origin rpy="0 0 0" xyz="0 0 -0.255"/>
     </visual>
   </link>
 
+
+<!--
   <joint name="pole_to_plate" type="fixed">
     <parent link="pole_link"/>
 	<child link="plate_link"/>
-	<origin xyz="0 0 1.01"/>
+	<origin xyz="0 0 0"/>
   </joint>
 
   <link name="plate_link">
     <visual>
 	  <geometry>
-	    <mesh filename="package://mantaro_description/meshes/ust.stl"/>
+	    <mesh filename="package://mantaro_description/meshes/top_plate.stl"/>
 	  </geometry>
-	  <origin rpy="0 0 1.57" xyz="0 0 -1.256"/>
+	  <origin rpy="0 0 0" xyz="0 0 0"/>
 	</visual>
   </link>
 
@@ -66,14 +67,14 @@
 	  <origin rpy="0 0 0" xyz="0 0 0"/>
 	</visual>
   </link>
-
-	<!-- wheel.stl sol tekere goredir -->
+-->
+	
 	 
   <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>
-    <origin rpy="0 0 0" xyz="0 .07 0"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.1210 0.165 0.0551"/>
+    <axis xyz="0 1 0"/>
     <limit effort="100" velocity="100"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
@@ -81,9 +82,9 @@
   <link name="wheel_left_link">
     <visual>
 	  <geometry>
-	    <mesh filename="package://mantaro_description/meshes/wheel.stl"/>
+	    <mesh filename="package://mantaro_description/meshes/left_wheel.stl"/>
 	  </geometry>
-	  <origin rpy="0 0 1.57" xyz="0 .16 0"/>
+	  <origin rpy="0 0 0" xyz="-0.1210 -0.165 -0.0551"/>
     </visual>
     <collision>
       <geometry>
@@ -101,16 +102,16 @@
   <joint name="wheel_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_right_link"/>
-    <origin rpy="0 0 0" xyz="0 -.16 0"/>
+    <origin rpy="0 0 0" xyz="0.10925 -0.16 0.0479"/>
     <axis xyz="0 1 0"/>
   </joint>
 	  
   <link name="wheel_right_link">
     <visual>
       <geometry>
-	    <mesh filename="package://mantaro_description/meshes/wheel.stl"/>
+	    <mesh filename="package://mantaro_description/meshes/right_wheel.stl"/>
 	  </geometry>
-	  <origin rpy="0 0 1.57" xyz="0 0 0"/>
+	  <origin rpy="0 0 0" xyz="-0.10925 0.16 -0.0479"/>
     </visual>
     <collision>
       <geometry>
@@ -125,19 +126,19 @@
     </inertial>
   </link>
 	  
-  <joint name="caster_front_joint" type="continuous">
+  <joint name="caster_behind_joint" type="continuous">
     <parent link="base_link"/>
-    <child link="caster_front_link"/>
-	<origin rpy="0 0 0" xyz="0 0 0"/>
-	<axis xyz="1 0 0"/>
+    <child link="caster_behind_link"/>
+	<origin rpy="0 0 0" xyz="-0.13 0 0.050"/>
+	<axis xyz="0 1 0"/>
   </joint>
 	  
-  <link name="caster_front_link">
+  <link name="caster_behind_link">
     <visual>
 	  <geometry>
-	    <mesh filename="package://mantaro_description/meshes/wheel.stl"/>
+	    <mesh filename="package://mantaro_description/meshes/caster_behind.stl"/>
 	  </geometry>
-	  <origin rpy="0 0 1.57" xyz="-.27 .165 0"/>
+	  <origin rpy="0 0 0" xyz="0.13 0 -0.050"/>
     </visual>
 	<collision>
 	  <geometry>
@@ -150,6 +151,6 @@
 	  <origin xyz="0 0 0"/>
 	  <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
-  </link>
+  </link> 
   
 </robot>
