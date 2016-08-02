@@ -18,10 +18,11 @@
     </visual>
   </link>
 
-  <joint name="base_to_pole" type="fixed">
+  <joint name="base_to_pole" type="continuous">
     <parent link="base_link"/>
     <child link="pole_link"/>
     <origin xyz="0 0 0.255"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
   <link name="pole_link">
