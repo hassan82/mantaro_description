@@ -129,7 +129,7 @@
   <joint name="caster_behind_joint" type="continuous">
     <parent link="base_link"/>
     <child link="caster_behind_link"/>
-	<origin rpy="0 0 0" xyz="-0.13 0 0.050"/>
+	<origin rpy="0 0 0" xyz="-0.1286 0 0.04429"/>
 	<axis xyz="0 1 0"/>
   </joint>
 	  
@@ -138,7 +138,7 @@
 	  <geometry>
 	    <mesh filename="package://mantaro_description/meshes/caster_behind.stl"/>
 	  </geometry>
-	  <origin rpy="0 0 0" xyz="0.13 0 -0.050"/>
+	  <origin rpy="0 0 0" xyz="0.1286 0 -0.04429"/>
     </visual>
 	<collision>
 	  <geometry>
