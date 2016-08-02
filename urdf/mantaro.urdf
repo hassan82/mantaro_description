@@ -33,7 +33,7 @@
 	  <origin rpy="0 0 0" xyz="0 0 -0.255"/>
     </visual>
   </link>
-
+s
 
 <!--
   <joint name="pole_to_plate" type="fixed">
