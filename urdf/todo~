@@ -1,6 +1,8 @@
 urdf notes:
 
-left right wheels yer değişecek
 -origins
+	-base_link sıkıntı
+	
+	
 -collision bakılacak
 -xacro ya çevirme

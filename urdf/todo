@@ -1,8 +1,4 @@
 urdf notes:
 
--origins
-	-base_link sıkıntı
-	
-	
 -collision bakılacak
--xacro ya çevirme
+-xacro tricks
